@@ -8,21 +8,13 @@ public class Serializator {
 
     public void serialization(ForecastDTO forecastDTO) {
         ObjectOutputStream oos = null;
-        try {
-            FileOutputStream fos = new FileOutputStream("D:/forecast.data");
+        try (FileOutputStream fos = new FileOutputStream("D:/forecast.data");) {
             oos = new ObjectOutputStream(fos);
             oos.writeObject(forecastDTO);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                oos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
