@@ -11,4 +11,5 @@ public class WeatherDTO implements Serializable {
     String description;
     int code;
 //stupid comment
+    //2
 }
