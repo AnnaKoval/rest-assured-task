@@ -10,5 +10,5 @@ public class WeatherDTO implements Serializable {
     String icon;
     String description;
     int code;
-
+//1
 }
